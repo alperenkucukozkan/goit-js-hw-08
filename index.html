@@ -3,21 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Image Gallery</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 156px 24px;
+        font-family: sans-serif;
+        background: #f2f2f2;
+      }
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        list-style: none;
+        padding: 20px;
+        margin: 0;
+      }
+      .gallery__item {
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+      .gallery__link {
+        display: block;
+        text-decoration: none;
+      }
+      .gallery__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+      }
+      .gallery__image:hover {
+        transform: scale(1.05);
+      }
+    </style>
   </head>
   <body>
-    <ul class="gallery">
-      <li class="gallery-item">
-        <a class="gallery-link" href="large-image.jpg">
-          <img
-            class="gallery-image"
-            src="small-image.jpg"
-            data-source="large-image.jpg"
-            alt="Image description"
-          />
-        </a>
-      </li>
-    </ul>
+    <ul class="gallery"></ul>
     <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js"></script>
+    <script src="./js/gallery.js"></script>
   </body>
 </html>
